@@ -27,6 +27,7 @@
             document.addEventListener('om.Optin.init.submit', function(event) {
                 // Grab the email address submitted by the user.
                 const email = event.detail.Optin.data.fields.email;
+		console.log("this " + email);
                 // Test to ensure it is a proper email. Otherwise, redirect to another page.
                 if ( /@yahoo.com$/.test(email) || /@gmail.com$/.test(email) || /@hotmail.com$/.test(email) || /@googlemail.com$/.test(email) || /@live.com$/.test(email) || /@aol.com$/.test(email) || /@outlook.com$/.test(email) || /@comcast.net$/.test(email) || /@inbox.com$/.test(email) || /@hushmail.com$/.test(email) || /@lycos.com$/.test(email) || /@zoho.com$/.test(email) || /@gmx.com$/.test(email) ) {
                     event.detail.Optin.success = function(){

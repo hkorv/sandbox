@@ -25,15 +25,13 @@
                 console.log("2");
 		console.log(event);
             } );
-		document.addEventListener('om.Optin.init', function(event) {
-			event.preventDefault();
-			try {
-   				console.log("3");
-  			} catch (e) {
-	   		throw new Error(e.message);
-  			}
-  			return false;
-		} );            
+		
+		document.addEventListener('om.Optin.init.submit', function(event) {
+		// This event is passed the Campaign object
+		console.log(event.detail.Campaign);
+		// This event is passed the Optin object
+		console.log(event.detail.Optin);
+} );
         </script>        
         <!-- / https://optinmonster.com -->    
     </body>
